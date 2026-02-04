@@ -1,0 +1,23 @@
+
+.card{
+    border-radius: 15px;
+    background-color:  rgba(176, 39, 39, 0.191);
+    height: 300px;
+    width: 800px;
+    margin: auto;
+    border: 2px solid rgba(115, 2, 2, 0.583);
+    margin-top: 30px;
+}
+
+.card h4, .card p, .card a{
+    padding: 20px;
+}
+
+.my-div {
+    text-align: center;
+    padding: 10px;
+}
+
+.card a {
+    color: rgb(6, 69, 186);
+}

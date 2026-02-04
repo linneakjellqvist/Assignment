@@ -1,0 +1,68 @@
+body {
+    display: grid;
+    font-family: sans-serif;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "head"
+    "Uppgift1"
+    "Uppgift2"
+    "Uppgift3"
+    "footer";
+}
+
+
+#head {
+    grid-area: head;
+    display: flex;
+    align-items: center;
+    background-color: rgba(176, 39, 39, 0.768);
+    height: 90px;
+}
+
+h1 {
+    margin-left: 40px;
+}
+
+nav{
+    background-color: rgb(222, 221, 224);
+    height: 60px;
+}
+#global {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+}
+
+#global a {
+    text-decoration: none;
+    color: black;
+}
+
+#global li {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgb(255, 255, 255);
+    width: 150px;
+    border-radius: 25px;
+    border: 2px solid rgba(98, 98, 98, 0.872);
+}
+#global li:hover {
+    background-color: rgb(222, 221, 224);
+    transition: 0.2s;
+}
+
+footer {
+    grid-area: footer;
+    background-color: rgba(90, 88, 93, 0.183);
+    height: 300px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin-left: 20px;
+    margin-top: 40px;
+}
