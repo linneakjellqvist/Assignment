@@ -2,7 +2,7 @@ import {uppgift} from "../assignment.js";
 
 import {skapaNav} from "../main.js";
 console.log(skapaNav);
-skapaNav();
+skapaNav(true);
 
 
 

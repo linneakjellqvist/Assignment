@@ -1,6 +1,6 @@
 import {skapaNav} from "../main.js";
 console.log(skapaNav);
-skapaNav();
+skapaNav(true);
 
 const kläder = {
     produkt1: {
