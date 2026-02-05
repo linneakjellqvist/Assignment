@@ -1,6 +1,6 @@
 import {uppgift} from "./assignment.js";
 
-export function skapaNav(underKatalog = false){
+export function skapaNav(underKatalog){
 
 const objects = document.getElementById("global");
 
@@ -10,7 +10,7 @@ const link = document.createElement("li");
 link.innerHTML = `<a href="${up.länk}">${up.titel}</a>`;
 objects.append(link);
 
-if(!underKatalog){
+if(underKatalog){
     link.querySelector("a").href = "../" + up.länk;
 };
 }
