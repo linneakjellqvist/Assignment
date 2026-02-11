@@ -53,6 +53,7 @@ function removeCart(){
     btn.addEventListener("click", () => {
         vagn.length = 0;
         cart();
+        localStorage.removeItem("vagn");
     });
 }
 removeCart();
