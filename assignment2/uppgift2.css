@@ -1,0 +1,44 @@
+#kort {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  
+}
+.produkt  {
+    border: 1.5px solid rgba(39, 39, 39, 0.354);
+    padding: 20px;
+    padding-left: 70px;
+    margin: 20px;
+    background-color: rgba(213, 213, 213, 0.274);
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.114);
+    width: 300px;
+    height: 600px;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+aside {
+    padding: 40px;
+    margin-right: 90px;
+    width: 300px;
+    background-color: rgba(213, 213, 213, 0.274);
+}
+.beskrivning {
+    background-color: white;
+    width: 233px;
+    height: 200px;
+}
+.beskrivning p {
+    margin: 10px;
+    padding: 5px;
+}
+
+.produkt.active {
+    transform: scale(1.05);
+    transition: 0.5s;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.114);
+}
