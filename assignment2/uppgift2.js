@@ -68,7 +68,7 @@ export const kläder = [
         namn: "Handskar",
         beskrivning: "Värmande handskar, gråa med ullfoder.",
         pris: 100, 
-        bild: "/images/handskar.jpg",
+        bild: "/vantar.jpg",
         kategori: {
             kategori1: "Tillbehör",
             kategori2: "Handskar"
@@ -80,7 +80,7 @@ export const kläder = [
         namn: "Sjal",
         beskrivning: "Mjuk sjal, blå med vita mönster.",
         pris: 200, 
-        bild: "/images/sjal.jpg",
+        bild: "/scarf.jpg",
         kategori: {
             kategori1: "Tillbehör",
             kategori2: "Sjal"
@@ -92,7 +92,7 @@ export const kläder = [
         namn: "Strumpor",
         beskrivning: "Färgglada strumpor, rosa med gula bananer på.",
         pris: 50, 
-        bild: "/images/strumpor.jpg",
+        bild: "/strumpor.jpg",
         kategori: {
             kategori1: "Tillbehör",
             kategori2: "Strumpor"
