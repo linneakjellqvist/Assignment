@@ -42,3 +42,24 @@ aside {
     transition: 0.5s;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.114);
 }
+button {
+    background-color: rgba(212, 65, 65, 0.768);
+    border: 1.5px solid rgba(176, 39, 39, 0.768);
+    border-radius: 5px;
+    color: rgb(236, 238, 240);
+}
+button:hover{
+    background-color: rgba(226, 133, 133, 0.768);
+    color: rgba(42, 42, 42, 0.977);
+}
+
+#huvud {
+    border: 1.5px solid rgba(31, 30, 30, 0.768);
+    height: 80px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+}
+#huvud h2{
+    margin-left: 20px;
+}
