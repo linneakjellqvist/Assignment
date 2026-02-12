@@ -78,7 +78,7 @@ export const kläder = [
     {
         id: "produkt7",
         namn: "Sjal",
-        beskrivning: "Mjuk sjal, blå med vita mönster.",
+        beskrivning: "Mjuk sjal, blå, vita, gula mönster. Perfekt för sommaren med tropiska mönster.",
         pris: 200, 
         bild: "/scarf.jpg",
         kategori: {
@@ -90,7 +90,7 @@ export const kläder = [
     {
         id: "produkt8",
         namn: "Strumpor",
-        beskrivning: "Färgglada strumpor, rosa med gula bananer på.",
+        beskrivning: "Färgglada strumpor, mörkgröna.",
         pris: 50, 
         bild: "/strumpor.jpg",
         kategori: {
