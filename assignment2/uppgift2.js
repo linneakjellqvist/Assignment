@@ -1,4 +1,4 @@
-
+//Detta är en lista på alla produkter som ska finnas på sidan och deras infromation 
 
 export const kläder = [ 
     

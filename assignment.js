@@ -7,7 +7,7 @@ export const uppgift = [ {
 {   id: "assignment2",
    titel: "Uppgift 2",
    länk: "assignment2/uppgift2.html",
-   beskrivning: "Uppgiftsbeskrivning:",
+   beskrivning: "Uppgiftsbeskrivning: I denna uppgift har jag skapat en online shop, där jag säljer second hand kläder. Jag gjorde denna sidan med hjälp av module alltså skapa många olika javascript filer som är ihop kopplade med en main fil. Uppgiften är uppgygd av ",
 }]
 console.log(uppgift);
 
