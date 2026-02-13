@@ -7,7 +7,7 @@ export const kläder = [
         namn: "Tröja",
         beskrivning: "Varm stickad ull tröja, röd med blåa, gula och vita detaljer.",
         pris: 250, 
-        bild: "./tröja2.jpg",
+        bild: "../tröja2.jpg",
         kategori: {
             kategori1: "Tröja",
             kategori2: "Stickat"
@@ -20,7 +20,7 @@ export const kläder = [
         namn: "Byxor",
         beskrivning: "Bekväma jeans, blå med slitna detaljer.",
         pris: 400, 
-        bild: "./jeans.jpg",
+        bild: "../jeans.jpg",
         kategori: {
             kategori1: "Byxor",
             kategori2: "Jeans"
@@ -32,7 +32,7 @@ export const kläder = [
         namn: "Skor",
         beskrivning: "Sportiga sneakers, svarta med vita detaljer.",
         pris: 600, 
-        bild: "./skor.jpg",
+        bild: "../skor.jpg",
         kategori: {
             kategori1: "Skor",
             kategori2: "Sneakers"
@@ -44,7 +44,7 @@ export const kläder = [
         namn: "Jacka",
         beskrivning: "Vattentät vinterjacka, svart med reflexdetaljer.",
         pris: 800, 
-        bild: "./jacka.jpg",
+        bild: "../jacka.jpg",
         kategori: {
             kategori1: "Ytterkläder",
             kategori2: "Jackor"
@@ -56,7 +56,7 @@ export const kläder = [
         namn: "strå hatt",
         beskrivning: "Stilren hatt, brun med svart band, perfekt för en solig sommar dag.",
         pris: 150, 
-        bild: "./hatt.jpg",
+        bild: "../hatt.jpg",
         kategori: {
             kategori1: "Huvudbonader",
             kategori2: "Hattar"
@@ -68,7 +68,7 @@ export const kläder = [
         namn: "Handskar",
         beskrivning: "Värmande handskar, gråa med ullfoder.",
         pris: 100, 
-        bild: "./vantar.jpg",
+        bild: "../vantar.jpg",
         kategori: {
             kategori1: "Tillbehör",
             kategori2: "Handskar"
@@ -80,7 +80,7 @@ export const kläder = [
         namn: "Sjal",
         beskrivning: "Mjuk sjal, blå, vita, gula mönster. Perfekt för sommaren med tropiska mönster.",
         pris: 200, 
-        bild: "./scarf.jpg",
+        bild: "../scarf.jpg",
         kategori: {
             kategori1: "Tillbehör",
             kategori2: "Sjal"
@@ -92,7 +92,7 @@ export const kläder = [
         namn: "Strumpor",
         beskrivning: "Färgglada strumpor, mörkgröna.",
         pris: 50, 
-        bild: "./strumpor.jpg",
+        bild: "../strumpor.jpg",
         kategori: {
             kategori1: "Tillbehör",
             kategori2: "Strumpor"
