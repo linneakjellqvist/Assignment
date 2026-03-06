@@ -13,7 +13,7 @@ export const uppgift = [ {
     id: "assignment3",
     titel: "Uppgift 3",
     länk: "assignment3/uppgift3.html",
-    beskrivning: ""
+    beskrivning: "I denn uppgiften finns det classer och jsnon listor, där man ska lära sig skapa ett spel logiskt med hjälp av javascript. Classerna och JSON listan ska kunna hämtas och exporteras mellan filer. Samt ska spelet gå ut på att simulera en vinnare genom att får en random vinnare men med hjälp av skilllevel."
 }]
 console.log(uppgift);
 
