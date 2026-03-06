@@ -8,6 +8,12 @@ export const uppgift = [ {
    titel: "Uppgift 2",
    länk: "assignment2/uppgift2.html",
    beskrivning: "Uppgiftsbeskrivning: I denna uppgift har jag skapat en online shop, där jag säljer second hand kläder. Jag gjorde denna sidan med hjälp av module alltså skapa många olika javascript filer som är ihop kopplade med en main fil. Sidan ska ha möjlighet att iteragera med korten, knapparna, lägga till i kundvagn. Samt ska infromationen i kundvagnen ska spara i localStorage.",
+},
+{
+    id: "assignment3",
+    titel: "Uppgift 3",
+    länk: "assignment3/uppgift3.html",
+    beskrivning: ""
 }]
 console.log(uppgift);
 

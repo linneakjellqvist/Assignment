@@ -1,0 +1,55 @@
+.match {
+    background-color: white;
+    grid-area: kvartsfinal;
+    border-radius: 20px;
+    margin-top: 30px;
+    border: 2px solid rgba(41, 28, 18, 0.494);
+    width: 400px;
+}
+
+.spel {
+    margin-left: 20px;
+}
+
+
+
+.vs {
+    margin-left: 40px;
+    font-size: large;
+    font-weight: bold;
+    color: rgb(176, 25, 25);
+}
+
+.spelplanen{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 2rem;
+}
+.vinnare{
+    background-color: green;
+}
+
+.round {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;  
+  gap: 1rem;
+}
+
+#final li{
+    text-decoration: none;
+    color: black;
+}
+
+#final ul{
+    list-style: none;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    height: 60px;
+}
