@@ -87,8 +87,8 @@ btn2.addEventListener("click", () => {
     btn1.hidden = false;
     btn1.textContent = "Starta kvartsfinal";
     game();
-    
-    
+
+
 
 })
 

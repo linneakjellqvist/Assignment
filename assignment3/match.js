@@ -26,8 +26,8 @@ export class Match {
     get isplayed() {
         return this.#vinnare !== null;
     }
-     render() {
-    
+    render() {
+
         this.#element = document.createElement("div");
         this.#element.classList.add("match")
 
@@ -43,29 +43,29 @@ export class Match {
     }
     //kollar ifall matchen är spelad
 
-    getElement(){
+    getElement() {
         return this.#element;
     }
 
     compete() {
 
-        if (this.isplayed) return; 
+        if (this.isplayed) return;
 
-            const skillA = this.player1.skillLevel;
-            const skillB = this.player2.skillLevel;
-            const chanceA = skillA/ (skillA + skillB);
+        const skillA = this.player1.skillLevel;
+        const skillB = this.player2.skillLevel;
+        const chanceA = skillA / (skillA + skillB);
 
-            const random = Math.random();
-            
-            this.#vinnare = random < chanceA ? this.player1 : this.player2;
-        
-            if(this.#vinnare === this.#player1){
-                this.player1Kort.classList.add("vinnare");
-            }else{
-                this.player2Kort.classList.add("vinnare");
-            }
+        const random = Math.random();
 
-        
+        this.#vinnare = random < chanceA ? this.player1 : this.player2;
+
+        if (this.#vinnare === this.#player1) {
+            this.player1Kort.classList.add("vinnare");
+        } else {
+            this.player2Kort.classList.add("vinnare");
+        }
+
+
     }
     static skapaKort(player) {
 

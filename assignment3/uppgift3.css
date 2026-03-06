@@ -21,31 +21,32 @@
     color: rgb(176, 25, 25);
 }
 
-.spelplanen{
+.spelplanen {
     display: flex;
     flex-direction: row;
     align-items: stretch;
     gap: 2rem;
 }
-.vinnare{
+
+.vinnare {
     background-color: rgba(23, 160, 23, 0.38);
-    margin:0;
-   
+    margin: 0;
+
 }
 
 .round {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;  
-  gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
 }
 
-#final li{
+#final li {
     text-decoration: none;
     color: black;
 }
 
-#final ul{
+#final ul {
     list-style: none;
     list-style-type: none;
     display: flex;
