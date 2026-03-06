@@ -4,7 +4,8 @@
     border-radius: 20px;
     margin-top: 30px;
     border: 2px solid rgba(41, 28, 18, 0.494);
-    width: 400px;
+    width: 450px;
+    font-size: 15px;
 }
 
 .spel {
@@ -27,7 +28,9 @@
     gap: 2rem;
 }
 .vinnare{
-    background-color: green;
+    background-color: rgba(23, 160, 23, 0.38);
+    margin:0;
+   
 }
 
 .round {
