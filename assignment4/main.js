@@ -1,0 +1,25 @@
+
+import { renderKort  } from "./kort.js";
+import { inputs } from "./form.js";
+
+const errorEl = document.getElementById("error");
+
+import { skapaNav } from "../main.js";
+skapaNav(true);
+
+
+try{
+const response = await fetch("houses.json");
+if(!response.ok){
+    throw new Error("Något gick fel, försök igen senare");
+}
+const data = await response.json();
+console.log(data);
+renderKort(data);
+inputs(data);
+}catch(error){
+    errorEl.textContent = "Ett fel har uppstått: " + error.message;
+    errorEl.classList.add("error");
+}
+
+

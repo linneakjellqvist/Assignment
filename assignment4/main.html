@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="main.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div id="head">
+            <h1>SPÖKHUSBYRÅN AB</h1>
+        </div>
+        <nav>
+            <ul id="global">
+                <li><a href="../index.html">Homepage</a></li>
+            </ul> 
+        </nav>
+        <form id="filter-from">
+            <label for="maxPris">Maxpris per natt</label>
+            <input type="number" id="maxPris" min="500" max="3000" placeholder="Ex. 900">
+
+            <label for="wifi" >Måste ha WIFI</label>
+            <input id="wifi" type="checkbox">
+
+            <lable for="scareRange">Lägsta skräcknivå:<span id="skräck-span"> </span></lable>
+            <input type="range" id="scareRange" min="1" max="5" value="1">
+
+            <label for="ghost">Alla typer</label>
+            <select id="ghost">
+                <option value="">Välj spöke</option>
+                <option value="poltergeist">poltergeist</option>
+                <option value="skuggvarelse">skuggvarelse</option>
+                <option value="kedjerassel">kedjerassel</option>
+                <option value="vit dam">vit dam</option>
+                <option value="huvudlös riddare">huvudlös riddare</option>
+                <option value="sjöspöke">sjöspöke</option>
+                <option value="dimvandare">dimvandare</option>
+                <option value="tvillingspöken">tvillingspöken</option>
+                <option value="industrispöke">industrispöke</option>
+                <option value="vittra">vittra</option>
+                <option value="vampyr">vampyr</option>
+                <option value="kosmisk entitet">kosmisk entitet</option>
+                <option value="det onämnbara">det onämnbara</option>
+                <option value="odöd katt">odöd katt</option>
+            </select>
+        </form>
+         <div id="tomm-sida"></div>
+        <div id="hus"></div>
+        <div id="error"></div>
+    </header>
+</body>
