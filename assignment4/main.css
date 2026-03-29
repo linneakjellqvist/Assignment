@@ -7,6 +7,16 @@ body{
     color: white;
 
 }
+#tomm-sida{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 20px;
+}
+#error{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 20px;
+}
 
 h1{
     color: rgb(192, 3, 3);
@@ -68,5 +78,11 @@ form{
 input, select{
     margin-right: 50px;
     margin-left: 5px;
+}
+
+#map{
+    height: 500px;
+    width: 500px;
+    margin: auto;
 }
 
