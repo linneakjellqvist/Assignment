@@ -8,31 +8,47 @@ const errorEl = document.getElementById("error");
 const section = document.getElementById("section");
 const formDiv = document.getElementById("form");
 
+
 function scareLevelText(level) {
-    const levl = { 1: "Mysigt", 2: "Lite läskigt", 3: "Obehaglig", 4: "Skräckinjagande", 5: "Ren terror" };
+    const levl = { 
+        1: "Mysigt", 
+        2: "Lite läskigt", 
+        3: "Obehaglig", 
+        4: "Skräckinjagande", 
+        5: "Ren terror" };
     return levl[level] ?? "Okänd skräcknivå";
+}
+
+const extraTillägg = { //göra en array med tilläggen och deras priser för att kunna använda i koden 
+    frukost: 400,
+    parkering: 200,
+    spökvandring: 600
 }
 
 let data;
 
 try {
     const response = await fetch("houses.json");
+    if (!response.ok) {//if satsen kollar om svaret från fetchen är ok annars kastas fel meddelandet
+        throw new Error("Något gick fel, försök igen senare");
+    }
     data = await response.json();
+
+    const params = new URLSearchParams(window.location.search);
+    const id = Number(params.get("id"));
+    const hus = data.find(d => d.id === id);
     console.log(data);
+    if (!hus) {//if satsen kollar ifall det huset som matchar id t finns annars kastas fel meddelandet 
+        errorEl.innerHTML = "Detta huset finns inte, förösk igen senare";
+    } else {
+        skapaKort(hus);
+        karta(hus);
+    }
 } catch (error) {
     errorEl.textContent = "Ett fel har uppstått: " + error.message;
     errorEl.classList.add("error");
 }
 
-const params = new URLSearchParams(window.location.search);
-const id = Number(params.get("id"));
-const hus = data?.find(d => d.id === id);
-
-if (!hus) {
-    errorEl.innerHTML = "Något gick fel, försök igen senare";
-}else {
-    skapaKort(hus);
-}
 
 function skapaKort(hus) {
     const card = document.createElement("div");
@@ -72,24 +88,18 @@ function skapaKort(hus) {
 
 
 
-    card.append(img, idName, plats, beskrivning, nivå, sökTyper, wifi, home);
+    card.append(home, img, idName, plats, beskrivning, nivå, sökTyper, wifi);
     section.append(card);
 
-    const extras =[
-        {id: "tillägg1", name: "Frukost", price: 400},
-        {id: "tillägg2", name: "Parkering", price: 200},
-        {id: "tillägg3", name: "Spökvandring", price: 600}
-    ];
-
-    const väljaDatum = new Date().toISOString().split("T")[0];
+    const iadag = new Date().toISOString().split("T")[0];// denna sätter minsta datumet till dagens datum, ISOstring konverterar datumet så att det blir rätt format, split T delar strängen i två delar och tar rätt del genom att sätta indexen till 0
 
 
 
-     const form = document.createElement("form");
-     form.id = "bookingForm";
+    const form = document.createElement("form");
+    form.id = "bookingForm";
 
     form.innerHTML = `  <label for="datum">Vilket datum vill du boka:</label>
-            <input type="date" id="datum" name="datum" min="2026-04-01" required>
+            <input type="date" id="datum" name="datum" min="${iadag}" required>
             <label for="nätter">Hur många nätter vill du stanna?</label>
             <input type="number" id="nätter" name="nätter" min="1" required>
             <fieldset>
@@ -109,23 +119,70 @@ function skapaKort(hus) {
 
     formDiv.append(form);
 
+
     const datumInput = document.getElementById("datum");
     const nätterInput = document.getElementById("nätter");
     const tillägg1Input = form.querySelectorAll('input[type="checkbox"]');
     const kampanjInput = document.getElementById("kampanj");
     const totalPris = document.getElementById("totalPris");
+    const bekräftelseEl = document.getElementById("bokningsBekräftelse");
 
-    function getIputs(){
-        const valdaExtras = checkboxar
-        .filter(c=> c.checked)
-        .map(c=> ({ name: c.value, price: Number(c.dataset.price) }));
-        
+
+
+    function getIputs() {
+
+        const extras = [];// sidan börjar med en tom array som fylls i med checkade tillägg
+        for (const tillägg of tillägg1Input) {//loopar igenom alla tillägg och kollar vilka som är checkade
+            if (tillägg.checked) {
+                extras.push({//ifall tillägget är checkat så pushas det till den tomma arrayen 
+                    name: tillägg.value,
+                    price: extraTillägg[tillägg.value]
+                });
+            }
+        }
+        return {//
+            date: datumInput.value,
+            nights: Number(nätterInput.value),
+            extras: extras,
+            discount: kampanjInput.value
+
+        };
     }
 
+    function uppdateraPris() {
 
+        const booking = new Booking(hus, getIputs());
+        if (booking.antalNätter() >= 1) {
+            totalPris.textContent = `Total: ${booking.Total()} kr`;
+        }
+    }
+    datumInput.addEventListener("change", uppdateraPris);
+    nätterInput.addEventListener("input", uppdateraPris);
+    kampanjInput.addEventListener("input", uppdateraPris);
+    for (const tillägg of tillägg1Input) {
+        tillägg.addEventListener("change", uppdateraPris);
+    }
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const booking = new Booking(hus, getIputs());
+        const fel = booking.validera();
+
+        bekräftelseEl.innerHTML = booking.bekräftelse();
+    });
 
 }
+function karta(hus) {
+    const koordinater = [hus.coordinates.lat, hus.coordinates.lng];
 
-skapaKort(rättSida);
+    const map = L.map('map').setView(koordinater, 13);
+
+    L.tileLayer('https:{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    L.marker(koordinater).addTo(map)
+        .bindPopup(hus.name)
+        .openPopup();
+}
 
 

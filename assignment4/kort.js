@@ -2,7 +2,12 @@ const container = document.getElementById("hus");
 const tomSida = document.getElementById("tomm-sida");
 
 function scareLevelText(level) {
-    const levl = {1: "Mysigt", 2: "Lite läskigt", 3: "Obehaglig", 4: "Skräckinjagande", 5: "Ren terror"};
+    const levl = {
+        1: "Mysigt", 
+        2: "Lite läskigt", 
+        3: "Obehaglig", 
+        4: "Skräckinjagande", 
+        5: "Ren terror"};
     return levl[level] ?? "Okänd skräcknivå";
 }
 
@@ -13,7 +18,7 @@ export function renderKort(data) {
     tomSida.textContent = "";
 
     if (data.length === 0) {
-        tomSida.textContent = "Inga hus matchar dina kriterier";
+        tomSida.textContent = "Inga hus har dem filtren du valt, försök igen med andra filter!";
         return;
     }
 

@@ -28,4 +28,36 @@ export class Booking {
     Total(){
         return this.house.pricePerNight * this.antalNätter() + this.extras() - this.discount();
     }
+
+    validera(){
+        const fel = [];
+
+        if (!this.date) {
+            fel.push("Du måste välja ett datum.");
+        }
+        
+        if (this.nights < 1) {
+            fel.push("Antal nätter måste vara minst 1.");
+        }
+
+        if(this.valdDiscount !== "GHOST20") {
+            fel.push("Ogiltig kampanjkod.");
+        }
+
+        return fel;
+    }
+    bekräftelse() {
+        const merTillägg = this.valdaExtras.length > 0 ? ` med tillägg: ${this.valdaExtras.map(e => e.name).join(", ")}` : "Inga tillägg";
+
+        const avdrag = this.discount() > 0 ? ` Rabatt: ${this.discount()} kr` : "";
+
+        return `<h3>Bokningsbekräftelse</h3>
+        <p>Du har bokat ${this.house.name}</p> 
+        <p>På datumet: ${this.date}</p>
+        <p>I ${this.antalNätter()} nätter</p>
+        <p>${merTillägg}</p>
+        <p>Totalpris: ${this.Total()} kr${avdrag}</p>
+        <p>Tack för din bokning, hoppas du får en skräckfull upplevelse!</p>
+        `
+    }
 }

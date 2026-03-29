@@ -10,7 +10,7 @@ skapaNav(true);
 
 try{
 const response = await fetch("houses.json");
-if(!response.ok){
+if(!response.ok){//if satsen kollar om svaret från fetchen är ok annars kastas fel meddelandet
     throw new Error("Något gick fel, försök igen senare");
 }
 const data = await response.json();
