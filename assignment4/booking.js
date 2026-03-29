@@ -51,10 +51,10 @@ export class Booking {
 
         const avdrag = this.discount() > 0 ? ` Rabatt: ${this.discount()} kr` : "";
 
-        return `<h3>Bokningsbekräftelse</h3>
+        return `<h3 id="titel">Bokningsbekräftelse</h3>
         <p>Du har bokat ${this.house.name}</p> 
         <p>På datumet: ${this.date}</p>
-        <p>I ${this.antalNätter()} nätter</p>
+        <p> ${this.antalNätter()} bokade nätter</p>
         <p>${merTillägg}</p>
         <p>Totalpris: ${this.Total()} kr${avdrag}</p>
         <p>Tack för din bokning, hoppas du får en skräckfull upplevelse!</p>

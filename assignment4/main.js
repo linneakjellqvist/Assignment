@@ -4,8 +4,7 @@ import { inputs } from "./form.js";
 
 const errorEl = document.getElementById("error");
 
-import { skapaNav } from "../main.js";
-skapaNav(true);
+
 
 
 try{

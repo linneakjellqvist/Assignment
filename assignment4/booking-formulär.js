@@ -39,7 +39,7 @@ try {
     const hus = data.find(d => d.id === id);
     console.log(data);
     if (!hus) {//if satsen kollar ifall det huset som matchar id t finns annars kastas fel meddelandet 
-        errorEl.innerHTML = "Detta huset finns inte, förösk igen senare";
+        errorEl.innerHTML = `<p>Detta huset finns inte, förösk igen senare</p><a href="main.html" class="home">Gå tillbaka till startsidan</a>`;
     } else {
         skapaKort(hus);
         karta(hus);
@@ -55,7 +55,7 @@ function skapaKort(hus) {
     card.classList.add("card");
 
     const home = document.createElement("a");
-    home.textContent = "Tillbaka till startsidan";
+    home.textContent = "< Tillbaka till startsidan";
     home.href = "main.html";
     home.classList.add("knapp");
 
@@ -113,7 +113,7 @@ function skapaKort(hus) {
             </fieldset>
             <label for="kampanj">Har du en kampanjkod?</label>
             <input type="text" id="kampanj" name="kampanj" placeholder="Ex. GHOST20">           
-            <button type="submit" class="knapp">Boka</button>
+            <button type="submit" class="submit">Boka</button>
             <p id="totalPris">Total: 0 kr</p>
             <div id="bokningsBekräftelse"></div>`;
 
@@ -140,7 +140,7 @@ function skapaKort(hus) {
                 });
             }
         }
-        return {//
+        return {//denna funktion hämatar alla inputs och retunerar dem i ett objekt 
             date: datumInput.value,
             nights: Number(nätterInput.value),
             extras: extras,
@@ -151,7 +151,7 @@ function skapaKort(hus) {
 
     function uppdateraPris() {
 
-        const booking = new Booking(hus, getIputs());
+        const booking = new Booking(hus, getIputs());//skapar en ny bokning varje gång en ipnut ändras 
         if (booking.antalNätter() >= 1) {
             totalPris.textContent = `Total: ${booking.Total()} kr`;
         }
@@ -172,6 +172,7 @@ function skapaKort(hus) {
     });
 
 }
+
 function karta(hus) {
     const koordinater = [hus.coordinates.lat, hus.coordinates.lng];
 
